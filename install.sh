@@ -11,11 +11,11 @@ fi
 echo "You selected : $DIR"
 if [ -d $DIR ]; then
 	echo $DIR directory found
-	if [ -d $DIR/LinuxKeylogger ]; then
-		echo -n "LinuxKeylogger already installed. replace (y/n)?"
+	if [ -d $DIR/LinuxKeyLogger ]; then
+		echo -n "LinuxKeyLogger already installed. replace (y/n)?"
 		read x
 		if [ $x = "y" ]; then
-			rm -r $DIR/LinuxKeylogger
+			rm -r $DIR/LinuxKeyLogger
 			echo removed old installation
 		else 
 			if [ $x = "n" ]; then
@@ -26,14 +26,14 @@ if [ -d $DIR ]; then
 			fi
 		fi
 	fi
-	echo making LinuxKeylogger Directory
-	mkdir $DIR/LinuxKeylogger
+	echo making LinuxKeyLogger Directory
+	mkdir $DIR/LinuxKeyLogger
 	echo Building source
 	make
 	echo Installing
-	chmod u+s ./bin/keylogger.out
-	cp ./bin/keylogger.out $DIR/LinuxKeylogger/keylogger.out
-	ln -s $DIR/LinuxKeylogger/keylogger.out /usr/local/bin/keylogger
+	cp -r . $DIR/LinuxKeyLogger
+	chmod u+s $DIR/LinuxKeyLogger/bin/keylogger.out
+	ln -s $DIR/LinuxKeyLogger/bin/keylogger.out /usr/local/bin/keylogger
 	echo Finished Installing
 else
 	echo "$DIR directory does not exist"

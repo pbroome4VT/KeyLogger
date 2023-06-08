@@ -1,4 +1,4 @@
 #!/bin/bash
 
 rm /usr/local/bin/keylogger
-rm -r .
+rm -r ../LinuxKeyLogger

