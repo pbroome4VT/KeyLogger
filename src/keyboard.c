@@ -113,8 +113,9 @@ int KLG_openKeyboards( int nFiles ){
         g_kbdFDs[i] = open( g_kbdPaths[i], O_RDONLY );
         if( g_verbose )
             printf( "opened FD %d as %s\n", g_kbdFDs[i], g_kbdPaths[i] );
-        if( !g_kbdFDs[i] ){
-            perror( "keyboard.c openKeyboards()#2" );
+        if(-1 == g_kbdFDs[i] ){
+            perror("Error : ");
+            fprintf( stderr, "%s\n", g_kbdPaths[i] );
             exit( 1 );
         }
     }

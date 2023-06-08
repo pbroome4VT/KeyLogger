@@ -9,6 +9,7 @@ includeFiles = $(addprefix $(IDIR)/, $(includes))
 all: $(sourceFiles) $(includeFiles)
 	gcc -o $(DIR)/bin/keylogger.out -I$(IDIR) $(sourceFiles)
 
-#all: 
-#	echo $(sourceFiles)
-        
+
+
+
+       
